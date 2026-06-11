@@ -1,5 +1,5 @@
-import 'package:coffee_shop/src/features/home/data/producst/products_datasource.dart';
-import 'package:coffee_shop/src/features/home/data/producst/products_fack_datasource.dart';
+import 'package:coffee_shop/src/features/home/data/products/products_datasource.dart';
+import 'package:coffee_shop/src/features/home/data/products/products_fack_datasource.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';

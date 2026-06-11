@@ -2,6 +2,8 @@ import 'package:coffee_shop/src/core/constants/colors.dart';
 import 'package:coffee_shop/src/core/constants/strings.dart';
 import 'package:coffee_shop/src/core/widgets/my_button_2.dart';
 import 'package:coffee_shop/src/features/home/model/product_module.dart';
+import 'package:coffee_shop/src/features/ordering/module/order_item.module.dart';
+import 'package:coffee_shop/src/features/ordering/pages/order_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -58,7 +60,17 @@ class ProductDetailesFooter extends StatelessWidget {
 
           //Buy now Button
           Expanded(
-            child: MyButton2(child: Text(Strings.sBuyNow()), onPressed: () {}),
+            child: MyButton2(
+              child: Text(Strings.sBuyNow()),
+              onPressed: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => OrderPage(
+                    orderItemModule: OrderItemModule(product: module, count: 1),
+                  ),
+                ),
+              ),
+            ),
           ),
         ],
       ),

@@ -5,7 +5,8 @@ import 'package:coffee_shop/src/core/widgets/my_buttom_sheet.dart';
 import 'package:coffee_shop/src/core/widgets/my_button.dart';
 import 'package:coffee_shop/src/core/widgets/my_text_field.dart';
 import 'package:coffee_shop/src/features/home/pages/home_page.dart';
-import 'package:coffee_shop/src/features/onbording/user_info.module.dart';
+import 'package:coffee_shop/src/features/onbording/modules/user_address.module.dart';
+import 'package:coffee_shop/src/features/onbording/modules/user_info.module.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -132,7 +133,7 @@ class WelcomePage extends StatelessWidget {
                                                     userName:
                                                         userNameController.text,
                                                     address:
-                                                        addressController.text,
+                                                        UserAddress(address: addressController.text, addressLine: 'addressLine'),
                                                   ),
                                                 );
                                                 Navigator.pushReplacement(

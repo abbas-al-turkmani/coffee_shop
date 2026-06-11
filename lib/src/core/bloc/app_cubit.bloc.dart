@@ -1,4 +1,4 @@
-import 'package:coffee_shop/src/features/onbording/user_info.module.dart';
+import 'package:coffee_shop/src/features/onbording/modules/user_info.module.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'app.state.dart';

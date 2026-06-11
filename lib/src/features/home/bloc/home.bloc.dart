@@ -1,4 +1,4 @@
-import 'package:coffee_shop/src/features/home/data/producst/products_datasource.dart';
+import 'package:coffee_shop/src/features/home/data/products/products_datasource.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'home.state.dart';

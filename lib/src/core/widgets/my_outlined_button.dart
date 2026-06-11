@@ -8,11 +8,15 @@ class MyOutlinedButton extends StatelessWidget {
     this.color = Colors.white,
     this.borderColor = Colors.grey,
     this.onTap,
+    this.padding,
+    this.borderRadius,
   });
 
   final Widget child;
   final Color? color;
   final Color borderColor;
+  final EdgeInsetsGeometry? padding;
+  final double? borderRadius;
   final void Function()? onTap;
 
   @override
@@ -23,18 +27,14 @@ class MyOutlinedButton extends StatelessWidget {
         decoration: BoxDecoration(
           color: color,
           border: BoxBorder.all(color: borderColor, width: 1),
-          borderRadius: BorderRadius.circular(12.r),
+          borderRadius: BorderRadius.circular(borderRadius ?? 12.r),
         ),
 
-        child: Center(
-          child: Padding(
-            padding: EdgeInsetsGeometry.symmetric(
-              horizontal: 43.w,
-              vertical: 10.h,
-            ),
-            child: child,
-          ),
-        ),
+        padding:
+            padding ??
+            EdgeInsetsGeometry.symmetric(horizontal: 43.w, vertical: 10.h),
+
+        child: Center(child: child),
       ),
     );
   }
