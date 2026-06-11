@@ -22,70 +22,102 @@ class OrderPage extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         // Address and Product
-        child: Stack(
-          alignment: AlignmentGeometry.bottomCenter,
+        child: Column(
           children: [
-            Column(
-              spacing: 16,
-              children: [
-                Padding(
-                  padding: EdgeInsetsGeometry.symmetric(horizontal: 24.w),
-                  child: Column(
-                    children: [
-                      OrderDetailesHeader(),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisSize: MainAxisSize.min,
-                        spacing: 24,
-                        children: [
-                          HorizontalSwitchButton(
-                            labels: [Strings.sDeliver(), Strings.sPickup()],
-                            inactiveColor: Color(0xFFEDEDED),
+            OrderDetailesHeader(),
+            Expanded(
+              child: Stack(
+                alignment: AlignmentGeometry.bottomCenter,
+                children: [
+                  SingleChildScrollView(
+                    child: Column(
+                      spacing: 16,
+                      children: [
+                        Padding(
+                          padding: EdgeInsetsGeometry.symmetric(
+                            horizontal: 24.w,
                           ),
-
-                          Column(
-                            spacing: 16,
+                          child: Column(
                             children: [
-                              DeliveryAddressSection(
-                                userAddress: UserAddress(
-                                  address: 'address',
-                                  addressLine: 'addressLine',
-                                ),
-                              ),
+                              Column(
+                                children: [
+                                  Column(
+                                    children: [
+                                      Column(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        mainAxisSize: MainAxisSize.min,
+                                        spacing: 24,
+                                        children: [
+                                          HorizontalSwitchButton(
+                                            labels: [
+                                              Strings.sDeliver(),
+                                              Strings.sPickup(),
+                                            ],
+                                            inactiveColor: Color(0xFFEDEDED),
+                                          ),
 
-                              Padding(
-                                // Horizontal Padding
-                                padding: EdgeInsets.symmetric(horizontal: 16.w),
-                                child: Divider(
-                                  color: Color(0xFFE3E3E3),
-                                  height: 0,
-                                ),
-                              ),
+                                          Column(
+                                            spacing: 16,
+                                            children: [
+                                              DeliveryAddressSection(
+                                                userAddress: UserAddress(
+                                                  address: 'address',
+                                                  addressLine: 'addressLine',
+                                                ),
+                                              ),
 
-                              // Product Card
-                              ProductCardHorizontal(module: orderItemModule),
+                                              Padding(
+                                                // Horizontal Padding
+                                                padding: EdgeInsets.symmetric(
+                                                  horizontal: 16.w,
+                                                ),
+                                                child: Divider(
+                                                  color: Color(0xFFE3E3E3),
+                                                  height: 0,
+                                                ),
+                                              ),
+
+                                              // Product Card
+                                              ProductCardHorizontal(
+                                                module: orderItemModule,
+                                              ),
+                                            ],
+                                          ),
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
                             ],
                           ),
-                        ],
-                      ),
-                    ],
-                  ),
-                ),
-                Divider(color: Color(0xFFF9F2ED), thickness: 4, height: 0),
+                        ),
+                        Divider(
+                          color: Color(0xFFF9F2ED),
+                          thickness: 4,
+                          height: 0,
+                        ),
 
-                // Price and Discount
-                Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 24.w),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    spacing: 24,
-                    children: [DiscountCard(), PaymentSummarySection()],
+                        // Price and Discount
+                        Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 24.w),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            spacing: 24,
+                            children: [DiscountCard(), PaymentSummarySection()],
+                          ),
+                        ),
+
+                        SizedBox(height: 150.h),
+                      ],
+                    ),
                   ),
-                ),
-              ],
+
+                  OrderDetailesFooter(),
+                ],
+              ),
             ),
-
-            OrderDetailesFooter(),
           ],
         ),
       ),
