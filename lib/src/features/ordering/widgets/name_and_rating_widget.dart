@@ -1,4 +1,5 @@
 import 'package:coffee_shop/gen/assets.gen.dart';
+import 'package:coffee_shop/src/core/constants/colors.dart';
 import 'package:coffee_shop/src/core/widgets/my_icon_button.dart';
 import 'package:coffee_shop/src/features/home/model/product_module.dart';
 import 'package:flutter/material.dart';
@@ -11,6 +12,8 @@ class NameAndRatingWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double iconsWidth = 20.w;
+
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       crossAxisAlignment: CrossAxisAlignment.center,
@@ -76,17 +79,29 @@ class NameAndRatingWidget extends StatelessWidget {
             MyIconButton(
               size: 44.sp,
               color: Color(0xFFEDEDED),
-              child: Assets.icons.bike.image(),
+              child: Transform.flip(
+                flipX: true,
+                child: Assets.icons.bike.image(
+                  width: iconsWidth,
+                  color: MyColors.primaryColor,
+                ),
+              ),
             ),
             MyIconButton(
               size: 44.sp,
               color: Color(0xFFEDEDED),
-              child: Assets.icons.bean.image(),
+              child: Assets.icons.bean.image(
+                width: iconsWidth,
+                color: MyColors.primaryColor,
+              ),
             ),
             MyIconButton(
               size: 44.sp,
               color: Color(0xFFEDEDED),
-              child: Assets.icons.milk.image(),
+              child: Assets.icons.milk.image(
+                width: iconsWidth,
+                color: MyColors.primaryColor,
+              ),
             ),
           ],
         ),

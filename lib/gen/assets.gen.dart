@@ -11,6 +11,16 @@
 
 import 'package:flutter/widgets.dart';
 
+class $AssetsEnvGen {
+  const $AssetsEnvGen();
+
+  /// File path: assets/env/api_links.env
+  String get apiLinks => 'assets/env/api_links.env';
+
+  /// List of all assets
+  List<String> get values => [apiLinks];
+}
+
 class $AssetsIconsGen {
   const $AssetsIconsGen();
 
@@ -74,13 +84,31 @@ class $AssetsImagesGen {
   AssetGenImage get banner1 =>
       const AssetGenImage('assets/images/banner_1.png');
 
+  /// File path: assets/images/driver_image.png
+  AssetGenImage get driverImage =>
+      const AssetGenImage('assets/images/driver_image.png');
+
+  /// File path: assets/images/map.png
+  AssetGenImage get map => const AssetGenImage('assets/images/map.png');
+
   /// List of all assets
-  List<AssetGenImage> get values => [a1, a2, a3, a4, a5, a6, banner1];
+  List<AssetGenImage> get values => [
+    a1,
+    a2,
+    a3,
+    a4,
+    a5,
+    a6,
+    banner1,
+    driverImage,
+    map,
+  ];
 }
 
 class Assets {
   const Assets._();
 
+  static const $AssetsEnvGen env = $AssetsEnvGen();
   static const $AssetsIconsGen icons = $AssetsIconsGen();
   static const $AssetsImagesGen images = $AssetsImagesGen();
 }

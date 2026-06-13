@@ -16,8 +16,10 @@ dependencies:
   flutter_screenutil: ^5.9.3
   get_it: ^9.2.1
   iconly: ^1.0.1
+  iconsax: ^0.0.8
   pretty_dio_logger: ^1.4.0
   shared_preferences: ^2.5.5
+  step_progress_indicator: ^1.0.2
 
 dev_dependencies:
   flutter_gen_runner: ^5.13.0+1

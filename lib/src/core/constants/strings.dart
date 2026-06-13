@@ -23,9 +23,13 @@ class Strings {
   static String sAddNote() => 'Add Note';
   static String sPaymentSummary() => 'Payment Summary';
   static String s1DiscountIsApplies() => '1 Discount is Applies';
+  static String sDeliveredYourOrder() => 'Delivered your order';
   static String sWelcomPageFirstSentence() =>
       'Fall in Love with Coffee in Blissful Delight!';
   static String sHomeBannerText() => 'Buy one get one FREE';
   static String sWelcomPageSecondSentence() =>
       'Welcome to our cozy coffee corner, where every cup is a delightful for you.';
+
+  static String sWeWillDeliverYourGoodsToYouInTheShortesPossibleTime() =>
+      'We will deliver your goods to you in the shortes possible time.';
 }

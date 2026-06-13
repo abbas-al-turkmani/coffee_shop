@@ -23,7 +23,7 @@ class ProductDetailesHeader extends StatelessWidget {
         ),
 
         Text(
-          Strings.sOrder(),
+          Strings.sDetail(),
           style: TextStyle(
             fontWeight: FontWeight.w600,
             fontSize: 16.sp,
