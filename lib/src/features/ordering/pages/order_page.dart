@@ -1,14 +1,14 @@
-import 'package:coffee_shop/src/core/constants/strings.dart';
-import 'package:coffee_shop/src/features/onbording/modules/user_address.module.dart';
-import 'package:coffee_shop/src/features/ordering/widgets/order_detailes_header.dart';
-import 'package:coffee_shop/src/core/widgets/horizontal_switch_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import 'package:coffee_shop/src/core/constants/strings.dart';
+import 'package:coffee_shop/src/core/widgets/horizontal_switch_button.dart';
 
 import '../module/order_item.module.dart';
 import '../widgets/delivery_address_widget.dart';
 import '../widgets/discount_card.dart';
 import '../widgets/order_detailes_footer.dart';
+import '../widgets/order_detailes_header.dart';
 import '../widgets/payment_summary_section.dart';
 import '../widgets/product_card_horizontal.dart';
 
@@ -60,12 +60,7 @@ class OrderPage extends StatelessWidget {
                                           Column(
                                             spacing: 16,
                                             children: [
-                                              DeliveryAddressSection(
-                                                userAddress: UserAddress(
-                                                  address: 'address',
-                                                  addressLine: 'addressLine',
-                                                ),
-                                              ),
+                                              DeliveryAddressSection(),
 
                                               Padding(
                                                 // Horizontal Padding

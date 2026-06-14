@@ -23,5 +23,6 @@ class AppCubit extends Cubit<AppState> {
 
   void saveUserInfo(UserInfoModule userInfoModule) {
     // sharedPreferences.setString(Keys.USER_INFO, userInfoModule.toJson());
+    emit(state.copyWith(userInfo: userInfoModule, userLoggedin: true));
   }
 }

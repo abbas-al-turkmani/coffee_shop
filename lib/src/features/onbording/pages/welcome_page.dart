@@ -90,6 +90,8 @@ class WelcomePage extends StatelessWidget {
                                       TextEditingController();
                                   TextEditingController addressController =
                                       TextEditingController();
+                                  TextEditingController addressLineController =
+                                      TextEditingController();
                                   return MyButton(
                                     child: Text(
                                       Strings.sGetStarted(),
@@ -98,18 +100,18 @@ class WelcomePage extends StatelessWidget {
 
                                     onPressed: () => showMyButtomSheet(
                                       context,
-                                      height: 275.h,
                                       Column(
+                                        mainAxisSize: .min,
                                         children: [
                                           Text('Let us know more about you'),
-                                          SizedBox(height: 24.h),
+                                          24.verticalSpace,
                                           MyTextField(
                                             controller: userNameController,
                                             hintText: 'Please Enter your name:',
                                             onFieldSubmitted: (value) {},
                                             onChanged: (value) {},
                                           ),
-                                          SizedBox(height: 12.h),
+                                          12.verticalSpace,
                                           MyTextField(
                                             controller: addressController,
                                             hintText:
@@ -117,7 +119,15 @@ class WelcomePage extends StatelessWidget {
                                             onFieldSubmitted: (value) {},
                                             onChanged: (value) {},
                                           ),
-                                          SizedBox(height: 12),
+                                          12.verticalSpace,
+                                          MyTextField(
+                                            controller: addressLineController,
+                                            hintText:
+                                                'Please Enter address Line1:',
+                                            onFieldSubmitted: (value) {},
+                                            onChanged: (value) {},
+                                          ),
+                                          12.verticalSpace,
                                           SizedBox(
                                             width: 125.w,
                                             child: MyButton(
@@ -132,8 +142,13 @@ class WelcomePage extends StatelessWidget {
                                                   UserInfoModule(
                                                     userName:
                                                         userNameController.text,
-                                                    address:
-                                                        UserAddress(address: addressController.text, addressLine: 'addressLine'),
+                                                    address: UserAddress(
+                                                      address: addressController
+                                                          .text,
+                                                      addressLine:
+                                                          addressLineController
+                                                              .text,
+                                                    ),
                                                   ),
                                                 );
                                                 Navigator.pushReplacement(

@@ -1,5 +1,7 @@
+import 'package:coffee_shop/src/core/bloc/app_cubit.bloc.dart';
 import 'package:coffee_shop/src/core/constants/strings.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class HomeLocationWidget extends StatelessWidget {
@@ -7,6 +9,8 @@ class HomeLocationWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    AppCubit appCubit = context.read();
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisSize: MainAxisSize.min,
@@ -25,7 +29,7 @@ class HomeLocationWidget extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             Text(
-              'rukin al deen',
+              appCubit.state.userInfo!.address.address,
               style: TextStyle(
                 color: Color(0xFFD8D8D8),
                 fontWeight: FontWeight.w600,
