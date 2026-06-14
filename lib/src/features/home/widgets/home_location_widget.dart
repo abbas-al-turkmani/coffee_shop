@@ -25,7 +25,7 @@ class HomeLocationWidget extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             Text(
-              'User_address',
+              'rukin al deen',
               style: TextStyle(
                 color: Color(0xFFD8D8D8),
                 fontWeight: FontWeight.w600,

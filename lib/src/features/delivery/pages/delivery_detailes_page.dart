@@ -7,6 +7,7 @@ import 'package:coffee_shop/src/core/constants/colors.dart';
 import 'package:coffee_shop/src/core/widgets/my_icon_button.dart';
 import 'package:iconsax/iconsax.dart';
 
+import '../painter/path_painter.dart';
 import '../widgets/deliver_bottom_sheet.dart';
 
 class DeliveryDetailesPage extends StatelessWidget {
@@ -25,6 +26,9 @@ class DeliveryDetailesPage extends StatelessWidget {
             fit: BoxFit.cover,
           ),
 
+          // Path
+          CustomPaint(size: Size.infinite, painter: PathPainter()),
+
           // location
           Padding(
             padding: EdgeInsets.only(top: 135.h, left: 71.w),
@@ -40,9 +44,9 @@ class DeliveryDetailesPage extends StatelessWidget {
             ),
           ),
 
-          // Driver Lcation
+          // Driver Location
           Padding(
-            padding: EdgeInsets.only(left: 195.w, top: 267.h),
+            padding: EdgeInsets.only(left: 204.w, top: 267.h),
             child: SizedBox(
               height: 40.h,
               width: 40.w,
@@ -64,7 +68,7 @@ class DeliveryDetailesPage extends StatelessWidget {
             ),
           ),
 
-          // content
+          // content. back button and gps button.
           SafeArea(
             child: Padding(
               padding: EdgeInsets.all(24.w),

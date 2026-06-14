@@ -6,6 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'src/core/bloc/app.state.dart';
+import 'src/features/onbording/pages/welcome_page.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -30,9 +31,7 @@ class MyApp extends StatelessWidget {
                   fontFamily: FontFamily.sora,
                   scaffoldBackgroundColor: Color(0xFFF9F9F9),
                 ),
-                home:
-                    //  state.userInfo == null ? WelcomePage() :
-                    HomePage(),
+                home: state.userInfo == null ? WelcomePage() : HomePage(),
               );
             },
           );

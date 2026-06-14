@@ -1,11 +1,12 @@
-import 'package:coffee_shop/gen/assets.gen.dart';
-import 'package:coffee_shop/src/core/constants/strings.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
-import 'package:coffee_shop/src/core/constants/colors.dart';
-import 'package:iconsax/iconsax.dart';
 import 'package:step_progress_indicator/step_progress_indicator.dart';
+
+import 'package:coffee_shop/gen/assets.gen.dart';
+import 'package:coffee_shop/src/core/constants/colors.dart';
+import 'package:coffee_shop/src/core/constants/strings.dart';
+
+import 'delivery_man_card.dart';
 
 class DeliveryBottomSheet extends StatefulWidget {
   const DeliveryBottomSheet({super.key});
@@ -159,55 +160,7 @@ class _DeliveryBottomSheetState extends State<DeliveryBottomSheet>
             SizedBox(height: 14),
 
             // Delevery man Card
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 24.w),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Row(
-                    mainAxisSize: MainAxisSize.min,
-                    spacing: 16.w,
-                    children: [
-                      SizedBox(
-                        width: 56,
-                        height: 56,
-                        child: Assets.images.driverImage.image(),
-                      ),
-
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'Brooklyn Simmons',
-                            style: TextStyle(
-                              color: Color(0xFF242424),
-                              fontWeight: FontWeight.w600,
-                              fontSize: 14.sp,
-                            ),
-                          ),
-                          Text(
-                            'Personal Courier',
-                            style: TextStyle(
-                              color: MyColors.inActiveColor,
-                              fontSize: 12.sp,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                  Container(
-                    decoration: BoxDecoration(
-                      border: Border.all(color: MyColors.borderColor),
-                      borderRadius: BorderRadius.circular(12.r),
-                    ),
-
-                    padding: EdgeInsetsDirectional.all(10),
-                    child: Icon(Iconsax.call_calling, size: 24.sp),
-                  ),
-                ],
-              ),
-            ),
+            DeliveryManCard(),
 
             SizedBox(height: 16),
           ],
